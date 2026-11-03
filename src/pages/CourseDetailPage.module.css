@@ -1,0 +1,254 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: var(--surface-muted);
+  border-bottom: 1px solid var(--border);
+  padding: var(--sp-6) 0;
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.breadcrumbs a {
+  color: var(--text-muted);
+}
+
+.headerMain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  max-width: 800px;
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.categoryBadge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--action);
+  background-color: color-mix(in oklab, var(--action), transparent 85%);
+  padding: 4px 10px;
+  border-radius: var(--radius-control);
+}
+
+.ageBadge,
+.levelBadge {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: var(--radius-control);
+}
+
+.title {
+  font-size: clamp(2rem, 1.6rem + 2vw, 3rem);
+  line-height: 1.15;
+}
+
+.shortDesc {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}
+
+.layoutContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-7);
+  padding-top: var(--sp-7);
+  padding-bottom: var(--sp-8);
+}
+
+@media (min-width: 900px) {
+  .layoutContainer {
+    grid-template-columns: 1fr 360px;
+    align-items: start;
+  }
+}
+
+.contentColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-7);
+}
+
+.contentSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.sectionHeading {
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: var(--sp-2);
+}
+
+.fullDescText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.syllabusList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.syllabusItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: var(--sp-4);
+}
+
+.syllabusIndex {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--brand-gold);
+  line-height: 1.2;
+}
+
+.syllabusText {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.teachersList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.teacherBrief {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--sp-4);
+}
+
+.teacherAvatar {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.teacherBriefName {
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+}
+
+.teacherBriefRole {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--action);
+  margin-bottom: 2px;
+}
+
+.teacherBriefExp {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/* Sidebar Column */
+.sidebarColumn {
+  position: sticky;
+  top: 90px;
+}
+
+.paramsCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  box-shadow: 0 4px 16px rgba(32, 27, 39, 0.04);
+}
+
+.paramsTitle {
+  font-size: 1.2rem;
+  margin-bottom: var(--sp-2);
+}
+
+.paramGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--surface-muted);
+}
+
+.paramLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.paramValue {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.priceGroup {
+  background-color: var(--surface-muted);
+  padding: var(--sp-3);
+  border-radius: var(--radius-control);
+  border-bottom: none;
+}
+
+.priceClarifyText {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.sidebarActionBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}

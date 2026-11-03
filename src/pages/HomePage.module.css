@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.callbackSection {
+  background-color: var(--canvas);
+}
+
+.callbackContainer {
+  max-width: 680px;
+}
+
+.callbackSection { background:#32144e; position:relative; }
+.callbackContainer { max-width:820px; }

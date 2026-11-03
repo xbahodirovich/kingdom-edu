@@ -1,0 +1,181 @@
+.branchesSection {
+  background-color: var(--canvas);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.sectionHeader {
+  max-width: 680px;
+}
+
+.sectionTitle {
+  margin-bottom: var(--sp-2);
+}
+
+.sectionSubtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.branchTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.tabBtn {
+  padding: 10px 20px;
+  border-radius: var(--radius-control);
+  font-size: 0.95rem;
+  font-weight: 600;
+  background-color: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  transition: background-color var(--duration-enter) var(--ease-out),
+              border-color var(--duration-enter) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tabBtn:hover {
+    background-color: var(--surface-muted);
+    border-color: var(--action);
+  }
+}
+
+.tabBtnActive {
+  background-color: var(--action);
+  color: #FFFFFF !important;
+  border-color: var(--action);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tabBtnActive:hover {
+    background-color: var(--action-hover);
+  }
+}
+
+.branchContentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+
+@media (min-width: 900px) {
+  .branchContentGrid {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+.infoCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  box-shadow: 0 4px 16px rgba(32, 27, 39, 0.04);
+}
+
+.districtBadge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--action);
+  letter-spacing: 0.05em;
+}
+
+.branchHeading {
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.detailGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.addressText {
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.landmarkText {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.phoneLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--action);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .phoneLink:hover {
+    color: var(--action-hover);
+  }
+}
+
+.notesBox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background-color: var(--surface-muted);
+  border-radius: var(--radius-control);
+  margin-top: auto;
+}
+
+.notesIcon {
+  flex-shrink: 0;
+}
+
+.notesText {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.ctaRow {
+  padding-top: var(--sp-2);
+}
+
+.mapContainer {
+  width: 100%;
+  min-height: 380px;
+  border-radius: var(--radius-panel);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--surface-muted);
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border: none;
+  display: block;
+}

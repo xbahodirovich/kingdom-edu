@@ -1,0 +1,46 @@
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 95;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 10px 16px;
+  padding-bottom: max(10px, env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 16px rgba(32, 27, 39, 0.08);
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .bottomBar {
+    display: none;
+  }
+}
+
+.barContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.callBtn {
+  flex: 1;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+.callbackBtn {
+  flex: 1;
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+.callBtn, .callbackBtn { min-width:0; white-space:normal; font-size:14px; padding:10px 8px; }
+.barContainer { gap:8px; }

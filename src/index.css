@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  /* Kingdom Education Design Tokens — from design.md */
+  --canvas: #FAF9F6;
+  --surface: #FFFFFF;
+  --surface-muted: #F1EEE9;
+  --text: #201B27;
+  --text-muted: #625A68;
+  --border: #DAD4DF;
+  --action: #62269C;
+  --action-hover: #4C1C7A;
+  --brand-gold: #DFA13D;
+  --focus: #62269C;
+  --error: #B42318;
+
+  /* Spacing scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+
+  /* Layout */
+  --max-width: 1200px;
+  --radius-control: 8px;
+  --radius-panel: 12px;
+
+  /* Typography */
+  --font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Motion Standards (Emil Kowalski review compliant) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --duration-enter: 200ms;
+  --duration-exit: 150ms;
+  --duration-press: 120ms;
+  --duration-release: 100ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: calc(76px + env(safe-area-inset-bottom)); /* space reserved for mobile contact bottom bar */
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+/* Accessible high-contrast focus rings: 3px outline, 3px offset */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Typography elements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  font-weight: 700;
+  text-wrap: balance;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.4rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+}
+
+p {
+  text-wrap: pretty;
+  margin-bottom: var(--sp-3);
+  color: var(--text-muted);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links */
+a {
+  color: var(--action);
+  text-decoration: none;
+  transition: color var(--duration-enter) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--action-hover);
+  }
+}
+
+/* Buttons and Controls */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Minimum interactive target size: 44x44px */
+button,
+a,
+input,
+select,
+textarea {
+  min-height: 44px;
+}
+
+/* Form inputs */
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  padding: 10px 14px;
+  width: 100%;
+  transition: border-color var(--duration-enter) var(--ease-out);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  border-color: var(--action);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 48px;
+  }
+}
+
+/* Section vertical spacing */
+.section {
+  padding-block: var(--sp-7);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--sp-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: var(--sp-9);
+  }
+}
+
+/* Primary and Secondary button classes conforming to design.md */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 48px;
+  padding: 12px 24px;
+  background-color: var(--action);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-control);
+  text-decoration: none;
+  transition: background-color var(--duration-enter) var(--ease-out),
+              transform var(--duration-press) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background-color: var(--action-hover);
+  }
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 48px;
+  padding: 12px 24px;
+  background-color: var(--surface);
+  color: var(--action) !important;
+  border: 1.5px solid var(--action);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-control);
+  text-decoration: none;
+  transition: background-color var(--duration-enter) var(--ease-out),
+              color var(--duration-enter) var(--ease-out),
+              transform var(--duration-press) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-secondary:hover {
+    background-color: var(--surface-muted);
+  }
+  .btn-secondary:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Visually hidden accessible utility */
+.visually-hidden {
+  position: absolute;
+  clip-path: inset(50%);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+/* Reduced motion compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+
+  }
+}
+
+/* Native dialog backdrop */
+dialog::backdrop {
+  background-color: rgba(32, 27, 39, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+::selection { background:#dfc3f1; color:#32144e; }
+input { caret-color:var(--action); }
+[id] { scroll-margin-top:100px; }
+[data-reveal] { transition: transform 500ms var(--ease-out), opacity 500ms var(--ease-out); }
+[data-motion-ready]:not([data-revealed]) { opacity:.85; transform:translateY(16px); }
+[data-revealed] { opacity:1; transform:translateY(0); }
+@media(max-width:767px) { [data-reveal] { transition-duration:400ms; transition-delay:0ms !important; } [data-motion-ready]:not([data-revealed]) { transform:translateY(8px); } }
+@media(prefers-reduced-motion:reduce) { [data-reveal], [data-hero-plane], [data-process-rail] { transform:none !important; opacity:1 !important; } .btn-primary:active,.btn-secondary:active { transform:none; } }

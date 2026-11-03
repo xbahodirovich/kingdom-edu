@@ -1,0 +1,29 @@
+.section { background:var(--surface); }
+.layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:72px; align-items:center; }
+.editorial { min-width:0; }
+.editorial h2 { font-size:clamp(34px,3.5vw,52px); line-height:1.12; letter-spacing:-.03em; margin-bottom:24px; }
+.editorial p { font-size:17px; line-height:1.7; max-width:43ch; }
+.benefits { display:flex; flex-direction:column; gap:14px; margin:28px 0 32px; font-size:14px; }
+.benefits span { display:flex; align-items:center; gap:12px; }
+.benefits span::before { content:''; width:8px; height:8px; flex:0 0 8px; border:1px solid var(--action); transform:rotate(45deg); }
+.actions { display:flex; flex-direction:column-reverse; align-items:flex-start; gap:12px; }
+.pause { font-size:12px; color:var(--text-muted); text-decoration:underline; text-underline-offset:4px; }
+.movingColumn { min-width:0; }
+.viewport { height:520px; overflow:hidden; border-block:1px solid #e5dcec; position:relative; }
+.track { display:flex; flex-direction:column; animation:courseDrift 85s linear infinite; }
+.group { display:flex; flex-direction:column; gap:16px; padding:0 0 16px; list-style:none; margin:0; }
+.tile { min-height:152px; padding:22px 26px; border:1px solid #e5dcec; border-radius:16px; background:#faf7fc; color:var(--text); display:flex; flex-direction:column; gap:12px; }
+.category { font-size:12px; color:var(--text-muted); }
+.tile h3,.copyTitle { font-size:25px; line-height:1.25; font-weight:700; }
+.footer { margin-top:auto; font-size:13px; color:var(--action); display:flex; justify-content:space-between; align-items:center; }
+.footer > span { font-size:24px; }
+.hint { margin-top:14px; font-size:12px; color:var(--text-muted); }
+@keyframes courseDrift { to { transform:translateY(-50%); } }
+@media(hover:hover) and (pointer:fine) { .viewport:hover .track { animation-play-state:paused !important; } .tile:hover { border-color:var(--action); color:var(--text); } }
+/* A stationary, scrollable list is available on focus, pause and reduced motion. */
+.viewport:focus-within,.viewport[data-paused='true'] { overflow-y:auto; }
+.viewport:focus-within .track,.viewport[data-paused='true'] .track { animation:none; transform:none; }
+.viewport:focus-within .copy,.viewport[data-paused='true'] .copy { display:none; }
+@media(max-width:1023px) { .layout { gap:36px; } .editorial h2 { font-size:38px; } .tile { padding:20px; } }
+@media(max-width:767px) { .layout { grid-template-columns:minmax(0,1fr); gap:32px; } .editorial h2 { font-size:34px; } .editorial p { font-size:16px; } .viewport { height:400px; } .tile { min-height:148px; } .tile h3,.copyTitle { font-size:23px; } .actions { flex-direction:row-reverse; justify-content:flex-end; align-items:center; flex-wrap:wrap; } .hint { display:none; } }
+@media(prefers-reduced-motion:reduce) { .track { animation:none; transform:none; } .viewport { overflow-y:auto; } .copy { display:none; } .pause { display:none; } }

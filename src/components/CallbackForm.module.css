@@ -1,0 +1,275 @@
+.formContainer {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--sp-6);
+  box-shadow: 0 4px 20px rgba(32, 27, 39, 0.05);
+}
+
+.modalWrapper {
+  max-width: 520px;
+  width: 100%;
+  margin: auto;
+
+}
+
+@keyframes dialogEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.formHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.titleArea {
+  flex: 1;
+}
+
+.formTitle {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin-bottom: var(--sp-1);
+}
+
+.formSubtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.closeModalBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  border-radius: var(--radius-control);
+  background-color: var(--surface-muted);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .closeModalBtn:hover {
+    color: var(--text);
+  }
+}
+
+/* Sandbox Mode Notice */
+.sandboxBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: 8px 12px;
+  background-color: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  margin-bottom: var(--sp-5);
+  font-size: 0.8rem;
+}
+
+.sandboxText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sandboxPill {
+  font-weight: 700;
+  color: var(--action);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sandboxToggleBtn {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sandboxToggleBtn:hover {
+    border-color: var(--action);
+  }
+}
+
+/* Form Fields */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.input,
+.select {
+  height: 48px;
+}
+
+.inputError {
+  border-color: var(--error) !important;
+  background-color: #FFF5F5;
+}
+
+.errorText {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--error);
+  line-height: 1.4;
+}
+
+.directCallAlternative {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding: 4px 0;
+}
+
+.directPhoneLink {
+  font-weight: 700;
+  color: var(--action);
+  text-decoration: underline;
+}
+
+.submitBtn {
+  width: 100%;
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submittingContent {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.privacyNotice {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Confirmed Delivery & Error Feedback States */
+.stateCard {
+  padding: var(--sp-6) var(--sp-4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.successIcon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: color-mix(in oklab, #12B76A, transparent 85%);
+  color: #027A48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.errorIcon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: color-mix(in oklab, var(--error), transparent 85%);
+  color: var(--error);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stateTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.stateDesc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  margin-bottom: 0;
+}
+
+.stateMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background-color: var(--surface-muted);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-control);
+  width: 100%;
+}
+
+.directCallBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  width: 100%;
+  padding: var(--sp-4);
+  background-color: var(--surface-muted);
+  border-radius: var(--radius-control);
+}
+
+.newRequestBtn,
+.retryBtn {
+  margin-top: var(--sp-2);
+}
+
+.availabilityNotice { margin-bottom:24px; font-size:14px; line-height:1.6; padding-block:12px; border-block:1px solid var(--border); }

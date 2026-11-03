@@ -1,0 +1,304 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding-top: var(--sp-6);
+  padding-bottom: var(--sp-6);
+  background-color: var(--surface-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+}
+
+.title {
+  font-size: clamp(2rem, 1.5rem + 1.8vw, 2.8rem);
+  margin-bottom: var(--sp-1);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 750px;
+  margin-bottom: 0;
+}
+
+.contentSection {
+  background-color: var(--canvas);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-7);
+}
+
+/* Stats Row */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+}
+
+.statCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statNumber {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--action);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.narrative {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.paragraph {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.sectionHeading {
+  font-size: 1.35rem;
+  margin-bottom: var(--sp-4);
+}
+
+.mtLarge {
+  margin-top: var(--sp-6);
+}
+
+.principlesCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-4);
+}
+
+@media (min-width: 768px) {
+  .principlesCards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.principleCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.principleTitle {
+  font-size: 1.1rem;
+}
+
+.principleDesc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Two Column Layout */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-7);
+}
+
+@media (min-width: 860px) {
+  .twoCol {
+    grid-template-columns: 1fr 440px;
+    align-items: start;
+  }
+}
+
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.checkIcon {
+  color: var(--action);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.directContactNote {
+  margin-top: var(--sp-6);
+  padding: var(--sp-5);
+  background-color: var(--surface-muted);
+  border-radius: var(--radius-panel);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.scheduleBadge {
+  display: inline-block;
+  padding: 8px 14px;
+  background-color: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--sp-4);
+}
+
+.scheduleBadge span {
+  font-weight: 700;
+  color: var(--action);
+}
+
+/* Vacancies */
+.vacanciesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 800px;
+}
+
+.vacancyCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.vacancyTitle {
+  font-size: 1.2rem;
+  color: var(--action);
+}
+
+.vacancyReqs {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.applyCard {
+  max-width: 800px;
+  background-color: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.applyTitle {
+  font-size: 1.2rem;
+}
+
+.applyNote {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.applyActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+/* Contacts details */
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: var(--sp-5);
+}
+
+.contactItemLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.largePhone {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--action) !important;
+}
+
+.additionalPhonesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.phoneSubLink {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hoursText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.socialButtonsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
